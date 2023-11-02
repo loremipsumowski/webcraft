@@ -1,0 +1,160 @@
+.webcraft_button {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--webcraft-font-size);
+}
+.webcraft_button--plain:disabled {
+	cursor: not-allowed;
+	color: var(--webcraft-color-gray-dark) !important;
+	background: var(--webcraft-color-gray-lightest) !important;
+}
+.webcraft_button--filled:disabled {
+	cursor: not-allowed;
+	color: var(--webcraft-color-gray-darkest) !important;
+	background: var(--webcraft-color-gray-medium) !important;
+}
+.webcraft_button_icon,
+.webcraft_button_text {
+	pointer-events: none;
+}
+.webcraft_button--plain {
+	background-color: transparent;
+}
+.webcraft_button--primary.webcraft_button--filled {
+	background-color: var(--webcraft-color-primary);
+	color: var(--webcraft-color-white);
+}
+.webcraft_button--primary.webcraft_button--filled:hover,
+.webcraft_button--primary.webcraft_button--filled:focus {
+	background-color: var(--webcraft-color-primary-dark);
+}
+.webcraft_button--primary.webcraft_button--filled:active {
+	background-color: var(--webcraft-color-primary-darkest);
+}
+.webcraft_button--secondary.webcraft_button--filled {
+	background-color: var(--webcraft-color-secondary);
+	color: var(--webcraft-color-white);
+}
+.webcraft_button--secondary.webcraft_button--filled:hover,
+.webcraft_button--secondary.webcraft_button--filled:focus {
+	background-color: var(--webcraft-color-secondary-dark);
+}
+.webcraft_button--secondary.webcraft_button--filled:active {
+	background-color: var(--webcraft-color-secondary-darkest);
+}
+.webcraft_button--success.webcraft_button--filled {
+	background-color: var(--webcraft-color-success);
+	color: var(--webcraft-color-white);
+}
+.webcraft_button--success.webcraft_button--filled:hover,
+.webcraft_button--success.webcraft_button--filled:focus {
+	background-color: var(--webcraft-color-success-dark);
+}
+.webcraft_button--success.webcraft_button--filled:active {
+	background-color: var(--webcraft-color-success-darkest);
+}
+.webcraft_button--warning.webcraft_button--filled {
+	background-color: var(--webcraft-color-warning);
+	color: var(--webcraft-color-white);
+}
+.webcraft_button--warning.webcraft_button--filled:hover,
+.webcraft_button--warning.webcraft_button--filled:focus {
+	background-color: var(--webcraft-color-warning-dark);
+}
+.webcraft_button--warning.webcraft_button--filled:active {
+	background-color: var(--webcraft-color-warning-darkest);
+}
+.webcraft_button--danger.webcraft_button--filled {
+	background-color: var(--webcraft-color-danger);
+	color: var(--webcraft-color-white);
+}
+.webcraft_button--danger.webcraft_button--filled:hover,
+.webcraft_button--danger.webcraft_button--filled:focus {
+	background-color: var(--webcraft-color-danger-dark);
+}
+.webcraft_button--danger.webcraft_button--filled:active {
+	background-color: var(--webcraft-color-danger-darkest);
+}
+
+.webcraft_button--primary.webcraft_button--plain {
+	color: var(--webcraft-color-primary);
+}
+.webcraft_button--primary.webcraft_button--plain:hover,
+.webcraft_button--primary.webcraft_button--plain:focus {
+	background-color: var(--webcraft-color-primary-lightest);
+}
+.webcraft_button--primary.webcraft_button--plain:active {
+	background-color: var(--webcraft-color-primary-light);
+}
+.webcraft_button--secondary.webcraft_button--plain {
+	color: var(--webcraft-color-secondary);
+}
+.webcraft_button--secondary.webcraft_button--plain:hover,
+.webcraft_button--secondary.webcraft_button--plain:focus {
+	background-color: var(--webcraft-color-secondary-lightest);
+}
+.webcraft_button--secondary.webcraft_button--plain:active {
+	background-color: var(--webcraft-color-secondary-light);
+}
+.webcraft_button--success.webcraft_button--plain {
+	color: var(--webcraft-color-success);
+}
+.webcraft_button--success.webcraft_button--plain:hover,
+.webcraft_button--success.webcraft_button--plain:focus {
+	background-color: var(--webcraft-color-success-lightest);
+}
+.webcraft_button--success.webcraft_button--plain:active {
+	background-color: var(--webcraft-color-success-light);
+}
+.webcraft_button--warning.webcraft_button--plain {
+	color: var(--webcraft-color-warning);
+}
+.webcraft_button--warning.webcraft_button--plain:hover,
+.webcraft_button--warning.webcraft_button--plain:focus {
+	background-color: var(--webcraft-color-warning-lightest);
+}
+.webcraft_button--warning.webcraft_button--plain:active {
+	background-color: var(--webcraft-color-warning-light);
+}
+.webcraft_button--danger.webcraft_button--plain {
+	color: var(--webcraft-color-danger);
+}
+.webcraft_button--danger.webcraft_button--plain:hover,
+.webcraft_button--danger.webcraft_button--plain:focus {
+	background-color: var(--webcraft-color-danger-lightest);
+}
+.webcraft_button--danger.webcraft_button--plain:active {
+	background-color: var(--webcraft-color-danger-light);
+}
+.webcraft_button--small {
+	padding: calc(1 * var(--webcraft-space)) calc(2 * var(--webcraft-space));
+	font-size: 0.8em;
+}
+.webcraft_button--medium {
+	padding: calc(2 * var(--webcraft-space)) calc(4 * var(--webcraft-space));
+}
+.webcraft_button--large {
+	padding: calc(3 * var(--webcraft-space)) calc(6 * var(--webcraft-space));
+	font-size: 1.2em;
+}
+.webcraft_button--round {
+	border-radius: 50%;
+	padding: 0;
+	overflow: hidden;
+}
+.webcraft_button--small.webcraft_button--round {
+	width: calc(6 * var(--webcraft-space));
+	height: calc(6 * var(--webcraft-space));
+}
+.webcraft_button--medium.webcraft_button--round {
+	width: calc(8 * var(--webcraft-space));
+	height: calc(8 * var(--webcraft-space));
+}
+.webcraft_button--large.webcraft_button--round {
+	width: calc(10 * var(--webcraft-space));
+	height: calc(10 * var(--webcraft-space));
+}

@@ -1,0 +1,170 @@
+:root {
+	--webcraft-space: 4px;
+	--webcraft-border-color: rgb(203, 203, 203);
+	--webcraft-border-size: 1px;
+	--webcraft-bg-color-gray: rgb(239, 239, 239);
+	--webcraft-bg-color-darkgray: rgb(165, 165, 165);
+	--webcraft-font-size: 12px;
+	--webcraft-font-size-small: 12px;
+
+	--webcraft-color-white: #fff;
+
+	--webcraft-color-primary-lightest: #d8ebff;
+	--webcraft-color-primary-light: #82beff;
+	--webcraft-color-primary: #007BFF;
+	--webcraft-color-primary-dark: #0065d1;
+	--webcraft-color-primary-darkest: #0050a6;
+
+	--webcraft-color-secondary-lightest: #e0e0e0;
+	--webcraft-color-secondary-light: #c5c5c5;
+	--webcraft-color-secondary: #6C757D;
+	--webcraft-color-secondary-dark: #50565b;
+	--webcraft-color-secondary-darkest: #292c2e;
+
+	--webcraft-color-success-lightest: #d9ffe2;
+	--webcraft-color-success-light: #c3ffd1;
+	--webcraft-color-success: #28A745;
+	--webcraft-color-success-dark: #208538;
+	--webcraft-color-success-darkest: #19622a;
+
+	--webcraft-color-warning-lightest: #fff6d9;
+	--webcraft-color-warning-light: #ffeeb5;
+	--webcraft-color-warning: #FFC107;
+	--webcraft-color-warning-dark: #e6ad03;
+	--webcraft-color-warning-darkest: #d39f00;
+
+	--webcraft-color-danger-lightest: #ffdee1;
+	--webcraft-color-danger-light: #ffc3c8;
+	--webcraft-color-danger: #DC3545;
+	--webcraft-color-danger-dark: #b92e3c;
+	--webcraft-color-danger-darkest: #89222c;
+
+	--webcraft-color-gray-lightest: #f5f5f5;
+	--webcraft-color-gray-light: #e7e7e7;
+	--webcraft-color-gray-medium: #b3b3b3;
+	--webcraft-color-gray-dark: #909090;
+	--webcraft-color-gray-darkest: #696969;
+}
+.webcraft {
+	font-family: "Roboto",Arial,Tahoma,Verdana,sans-serif;
+	font-size: var(--webcraft-font-size);
+	cursor: default;
+	width: 100%;
+	height: 100%;
+}
+.webcraft--modal {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+.webcraft_modal_wrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+.webcraft_modal_wrapper > div {
+	pointer-events: auto;
+}
+.webcraft_modal_wrapper--modal {
+	background-color: #010101b3;
+	pointer-events: auto;
+}
+
+.webcraft_container {
+	display: flex;
+	position: relative;
+}
+
+.webcraft_flex--row {
+	flex-direction: row;
+}
+.webcraft_flex--column {
+	flex-direction: column;
+}
+.webcraft_flex--justify-start {
+	justify-content: flex-start;;
+}
+.webcraft_flex--justify-end {
+	justify-content: flex-end;
+}
+.webcraft_flex--justify-center {
+	justify-content: center;
+}
+.webcraft_flex--justify-between {
+	justify-content: space-between;
+}
+.webcraft_flex--justify-around {
+	justify-content: space-around;
+}
+.webcraft_flex--justify-evenly {
+	justify-content: space-evenly;
+}
+.webcraft_flex--align-start {
+	align-items: flex-start;
+}
+.webcraft_flex--align-end {
+	align-items: flex-end;
+}
+.webcraft_flex--align-center {
+	align-items: center;
+}
+.webcraft_flex--align-stretch {
+	align-items: stretch;
+}
+.webcraft_border {
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
+}
+.webcraft_border--top {
+	border-top: var(--webcraft-border-size) solid var(--webcraft-border-color);
+}
+.webcraft_border--right {
+	border-right: var(--webcraft-border-size) solid var(--webcraft-border-color);
+}
+.webcraft_border--bottom {
+	border-bottom: var(--webcraft-border-size) solid var(--webcraft-border-color);
+}
+.webcraft_border--left {
+	border-left: var(--webcraft-border-size) solid var(--webcraft-border-color);
+}
+
+.webcraft_overflow--hidden {
+	overflow: hidden;
+}
+
+.webcraft_text_no_data {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	color: var(--webcraft-color-gray-dark);
+	justify-content: center;
+	align-items: center;
+	padding: var(--webcraft-space) 0;
+}
+
+.webcraft ::-webkit-scrollbar {
+	width: 20px;
+}
+  
+.webcraft ::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+.webcraft ::-webkit-scrollbar-thumb {
+	background-color: #d6dee1;
+	border-radius: 20px;
+	border: 6px solid transparent;
+	background-clip: content-box;
+}
+
+.webcraft ::-webkit-scrollbar-thumb:hover {
+	background-color: #a8bbbf;
+}

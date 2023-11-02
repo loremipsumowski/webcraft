@@ -1,0 +1,36 @@
+.webcraft_progress {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: rgba(255,255,255,0.5);
+	z-index: 999;
+}
+
+.webcraft_progress_spinner {
+	display: inline-block;
+	width: calc(var(--webcraft-space) * 10);
+	height: calc(var(--webcraft-space) * 10);
+  }
+  .webcraft_progress_spinner:after {
+	content: " ";
+	display: block;
+	width: calc(var(--webcraft-space) * 8);
+	height: calc(var(--webcraft-space) * 8);
+	margin: calc(var(--webcraft-space) * 1);
+	border-radius: 50%;
+	border: calc(var(--webcraft-space) * 1) solid var(--webcraft-color-primary);
+	border-color: var(--webcraft-color-primary) transparent var(--webcraft-color-primary) transparent;
+	animation: webcraft_progress_spinner 1.2s linear infinite;
+  }
+  @keyframes webcraft_progress_spinner {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  

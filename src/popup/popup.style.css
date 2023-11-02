@@ -1,0 +1,9 @@
+.webcraft_popup_wrapper {
+	position: fixed;
+}
+.webcraft_popup {
+	background-color: var(--webcraft-color-white);
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);	
+	box-shadow: 0px calc(2 * var(--webcraft-space)) calc(6 * var(--webcraft-space))  0px var(--webcraft-color-gray-medium);
+	pointer-events: auto;
+}

@@ -1,0 +1,6 @@
+.webcraft_toggle {
+	display: flex;
+}
+.webcraft_toggle > button {
+	flex: 1 0;
+}

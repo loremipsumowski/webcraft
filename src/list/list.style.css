@@ -1,0 +1,22 @@
+div.webcraft_list_wrapper {
+	width: 100%;
+	overflow: auto;
+}
+.webcraft_list {
+	width: 100%;
+	height: 100%;
+}
+.webcraft_list_item {
+	cursor: pointer;
+	padding: calc(2 * var(--webcraft-space)) calc(4 * var(--webcraft-space)) ;
+}
+.webcraft_list_item:hover {
+	background-color: var(--webcraft-color-secondary-lightest);
+}
+.webcraft_list_item--selected {
+	background-color: var(--webcraft-color-primary-lightest) !important;
+	box-shadow: 0 0 -2px 0 var(--webcraft-color-primary);
+}
+.webcraft_list_item--focused {
+	background-color: var(--webcraft-color-secondary-lightest);
+}

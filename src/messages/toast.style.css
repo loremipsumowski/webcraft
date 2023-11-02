@@ -1,0 +1,86 @@
+.webcraft_toast {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: auto;
+	max-height: calc(100% - 40px);
+	max-width: calc(100% - 40px);
+	width: 400px;
+	pointer-events: auto;
+}
+.webcraft_toast_message {
+	border: 1px solid;
+    border-radius: var(--webcraft-space);
+	max-width: 100%;
+	margin-top: calc(2 * var(--webcraft-space));;
+	overflow: hidden;
+}
+.webcraft_toast_message_content {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+    padding: calc(2 * var(--webcraft-space));
+}
+.webcraft_toast_message_content > div {
+	padding: 0 5px;
+}
+.webcraft_toast_message_progress {
+	height: calc(0.5 * var(--webcraft-space));
+}
+.webcraft_toast_message_title {
+	font-weight: 600;
+	margin-bottom: var(--webcraft-space);
+}
+.webcraft_toast_message_icon {
+	font-size: 2em;
+}
+.webcraft_toast_message--primary > .webcraft_toast_message_progress {
+	background-color: var(--webcraft-color-primary-dark);
+}
+.webcraft_toast_message--primary {
+	border-color: var(--webcraft-color-primary-dark);
+	background-color: var(--webcraft-color-primary-light);
+}
+.webcraft_toast_message--primary .webcraft_toast_message_icon {
+	color: var(--webcraft-color-primary-dark);
+}
+.webcraft_toast_message--secondary > .webcraft_toast_message_progress {
+	background-color: var(--webcraft-color-secondary-dark);
+}
+.webcraft_toast_message--secondary {
+	border-color: var(--webcraft-color-secondary-dark);
+	background-color: var(--webcraft-color-secondary-light);
+}
+.webcraft_toast_message--success .webcraft_toast_message_icon {
+	color: var(--webcraft-color-success-dark);
+}
+.webcraft_toast_message--success > .webcraft_toast_message_progress {
+	background-color: var(--webcraft-color-success-dark);
+}
+.webcraft_toast_message--success {
+	border-color: var(--webcraft-color-success-dark);
+	background-color: var(--webcraft-color-success-light);
+}
+.webcraft_toast_message--warning .webcraft_toast_message_icon {
+	color: var(--webcraft-color-warning-dark);
+}
+.webcraft_toast_message--warning > .webcraft_toast_message_progress {
+	background-color: var(--webcraft-color-warning-dark);
+}
+.webcraft_toast_message--warning {
+	border-color: var(--webcraft-color-warning-dark);
+	background-color: var(--webcraft-color-warning-light);
+}
+.webcraft_toast_message--danger .webcraft_toast_message_icon {
+	color: var(--webcraft-color-danger-dark);
+}
+.webcraft_toast_message--danger > .webcraft_toast_message_progress {
+	background-color: var(--webcraft-color-danger-dark);
+}
+.webcraft_toast_message--danger {
+	border-color: var(--webcraft-color-danger-dark);
+	background-color: var(--webcraft-color-danger-light);
+}
+.webcraft_toast_message--danger .webcraft_toast_message_icon {
+	color: var(--webcraft-color-danger-dark);
+}

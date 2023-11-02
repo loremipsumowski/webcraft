@@ -1,0 +1,41 @@
+.webcraft_calendar {
+	width: 300px;
+}
+.webcraft_calendar_line {
+	display: flex;
+	width: 100%;
+}
+.webcraft_calendar_item {
+	cursor: pointer;
+	background-color: var(--webcraft-color-gray-lightest);
+}
+.webcraft_calendar_item,
+.webcraft_calendar_weekday,
+.webcraft_calendar_weeknumber {
+	flex: 1 0;
+	padding: var(--webcraft-space);
+	margin: var(--webcraft-space);
+	width: calc(var(--webcraft-space) * 5);
+	height: calc(var(--webcraft-space) * 5);
+	text-align: center;
+	line-height: calc(var(--webcraft-space) * 5);
+}
+.webcraft_calendar_weeknumber {
+	font-size: 0.9em;
+	color: var(--webcraft-color-gray-dark);
+}
+.webcraft_calendar_item:hover {
+    box-shadow: 0 0 0 calc(0.5 * var(--webcraft-space)) var(--webcraft-color-primary-light);
+}
+
+.webcraft_calendar_item--gray {
+	color: var(--webcraft-color-gray-medium);
+}
+
+.webcraft_calendar_item--today {
+    background-color: var(--webcraft-color-primary-lightest);
+}
+.webcraft_calendar_item--selected {
+	outline: 1px solid var(--webcraft-color-primary);
+    background-color: var(--webcraft-color-primary-lightest);
+}

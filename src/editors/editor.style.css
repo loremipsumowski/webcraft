@@ -1,0 +1,101 @@
+.webcraft_editor {
+	display: flex;
+	flex-direction: column;
+	padding: var(--webcraft-space);
+}
+.webcraft_editor_control {
+	border: none;
+	flex: 1;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	padding: 0 var(--webcraft-space)
+}
+.webcraft_editor--focused .webcraft_control_wrapper {
+	box-shadow: 0 0 0 calc(0.5 * var(--webcraft-space)) var(--webcraft-color-primary-light);
+}
+.webcraft_editor--focused.webcraft_editor--success .webcraft_control_wrapper {
+	box-shadow: 0 0 0 calc(0.5 * var(--webcraft-space)) var(--webcraft-color-success-light);
+}
+.webcraft_editor--focused.webcraft_editor--danger .webcraft_control_wrapper {
+	box-shadow: 0 0 0 calc(0.5 * var(--webcraft-space)) var(--webcraft-color-danger-light);
+}
+.webcraft_editor--success .webcraft_control_wrapper {
+	border-color: var(--webcraft-color-success);
+}
+.webcraft_editor--danger .webcraft_control_wrapper {
+	border-color: var(--webcraft-color-danger);
+}
+.webcraft_editor_label {
+	font-weight: 600;
+	font-size: var(--webcraft-font-size);
+	margin-bottom: var(--webcraft-space);
+	padding-left: var(--webcraft-space);
+	display: inline-block;
+	width: fit-content;
+}
+.webcraft_editor_desc {
+	color: var(--webcraft-color-gray-dark);
+	font-size: 0.8em;
+	padding-left: var(--webcraft-space);
+	margin-top: calc(0.5 * var(--webcraft-space));
+}
+.webcraft_editor--required > .webcraft_editor_label:before {
+    content: '*';
+    color: var(--webcraft-color-danger);
+	margin-right: var(--webcraft-space);
+}
+.webcraft_control_wrapper {
+	position: relative;
+	height: 30px;
+	width: calc(100% - calc(2 * var(--webcraft-space)));
+	display: flex;
+	outline: none;
+	border-radius: var(--webcraft-space);
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	align-items: center;
+}
+.webcraft_control_wrapper > button,
+.webcraft_editor_icon {
+	height: 30px;
+}
+.webcraft_editor_icon {
+	width: 30px;
+	flex: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	color: var(--webcraft-color-gray-medium);
+	box-sizing: border-box;
+}
+.webcraft_editor_content {
+	flex: 1;
+	height: 100%;
+}
+.webcraft_editor--focused .webcraft_editor_icon {
+	border-color: var(--webcraft-color-primary);
+	color: var(--webcraft-color-primary);
+}
+.webcraft_editor--success .webcraft_editor_icon {
+	border-color: var(--webcraft-color-success);
+	color: var(--webcraft-color-success);
+}
+.webcraft_editor--danger .webcraft_editor_icon {
+	border-color: var(--webcraft-color-danger);
+	color: var(--webcraft-color-danger);
+}
+.webcraft_editor--success .webcraft_editor_desc {
+	border-color: var(--webcraft-color-success);
+	color: var(--webcraft-color-success);
+}
+.webcraft_editor--danger .webcraft_editor_desc {
+	border-color: var(--webcraft-color-danger);
+	color: var(--webcraft-color-danger);
+}
+.webcraft_editor--disabled .webcraft_control_wrapper {
+	background-color: var(--webcraft-color-gray-light);
+}

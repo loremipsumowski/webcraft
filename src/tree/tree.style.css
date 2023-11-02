@@ -1,0 +1,26 @@
+
+.webcraft_tree {
+	overflow: auto;
+	height: 100%;
+	background-color: var(--webcraft-color-white);
+}
+.webcraft_tree_leaf {
+	display: flex;
+	padding: calc(0.5 * var(--webcraft-space)) 0;
+}
+.webcraft_tree_leaf_populated,
+.webcraft_tree_leaf_empty {
+	width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.webcraft_tree_leaf_populated {
+	cursor: pointer;
+}
+.webcraft_tree_leaf_icon {
+	color: var(--webcraft-color-secondary-light);
+}
+.webcraft_tree_leaf--selected {
+	background-color: var(--webcraft-color-primary-light);
+}

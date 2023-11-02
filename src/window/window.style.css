@@ -1,0 +1,26 @@
+.webcraft_window {
+	background-color: var(--webcraft-color-white);
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
+	min-width: 300px;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+}
+.webcraft_window_header {
+	border-bottom: var(--webcraft-border-size) solid var(--webcraft-border-color);
+}
+.webcraft_window_header_title {
+	font-weight: 600;
+	font-size: 1.1em;
+}
+.webcraft_window_content {
+	padding: calc(2 * var(--webcraft-space));
+	flex: 1;
+}
+.webcraft_window--maximized {
+	width: 100% !important;
+	height: calc(100% - calc(2 * var(--webcraft-border-size))) !important;
+	left: 0;
+	top: 0;
+	margin: var(--webcraft-border-size) 0;
+}

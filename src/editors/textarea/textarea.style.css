@@ -1,0 +1,9 @@
+.webcraft_textarea .webcraft_control_wrapper {
+	height: 100px;
+}
+.webcraft_textarea textarea {
+	resize: none;
+	padding: var(--webcraft-space);
+	height: calc(100% - var(--webcraft-space));
+	width: calc(100% - var(--webcraft-space));
+}

@@ -1,0 +1,13 @@
+.webcraft_timepicker input {
+	text-align: center;
+}
+
+.webcraft_timepicker_separator {
+	font-weight: 600;
+	height: 100%;
+}
+.webcraft_timepicker_separator > .webcraft_box_content {
+	padding: 0;
+	text-align: center;
+	font-size: 1.3em;
+}

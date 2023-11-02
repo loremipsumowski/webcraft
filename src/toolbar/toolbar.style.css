@@ -1,0 +1,10 @@
+.webcraft_toolbar {
+	display: flex;
+	align-items: center;
+	background-color: var(--webcraft-color-white);
+	height: fit-content;
+	padding: var(--webcraft-space);
+}
+.webcraft_toolbar_item:not(:last-child) {
+	margin-right: var(--webcraft-space);
+}

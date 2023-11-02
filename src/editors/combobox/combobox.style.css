@@ -1,0 +1,29 @@
+.webcraft_combobox--multiple .webcraft_combobox_value {
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
+	border-radius: 2px;
+	display: flex;
+	align-items: center;
+	padding: 0 var(--webcraft-space);
+	margin: 2px 4px 2px 0;
+}
+.webcraft_combobox--multiple .webcraft_editor_control,
+.webcraft_combobox--multiple .webcraft_combobox_value {
+	height: 16px;
+	overflow: hidden;
+}
+
+.webcraft_combobox--multiple input {
+	min-width: 50px;
+}
+
+.webcraft_combobox--multiple .webcraft_editor_content {
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	max-height: 100px;
+	overflow: auto;
+	padding: var(--webcraft-space);
+}
+.webcraft_combobox--multiple .webcraft_control_wrapper {
+	flex: 1;
+}

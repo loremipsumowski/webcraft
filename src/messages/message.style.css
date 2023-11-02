@@ -1,0 +1,74 @@
+.webcraft_message {
+	position: absolute;
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
+	border-radius: var(--webcraft-space);
+	background-color: var(--webcraft-color-white);
+	max-width: 800px;
+	max-height: 50vh;
+	min-width: 300px;
+	min-height: calc(35 * var(--webcraft-space));
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	pointer-events: auto;
+}
+.webcraft_message_title {
+	padding: calc(2 * var(--webcraft-space));
+	text-align: center;
+	font-weight: 600;
+	font-size: 1.1em;
+	border-bottom: var(--webcraft-border-size) solid;
+}
+.webcraft_message_content {
+	text-align: center;
+	white-space: break-spaces;
+	padding: calc(2 * var(--webcraft-space));
+}
+
+.webcraft_message_content_wrapper {
+	overflow: auto;
+	margin: calc(2 * var(--webcraft-space));
+}
+.webcraft_message--primary {
+	border-color: var(--webcraft-color-primary-dark);
+}
+.webcraft_message--primary > .webcraft_message_title {
+	background-color: var(--webcraft-color-primary);
+	color: var(--webcraft-color-white);
+	border-color: var(--webcraft-color-primary-dark);
+}
+.webcraft_message--secondary {
+	border-color: var(--webcraft-color-secondary-dark);
+}
+.webcraft_message--secondary > .webcraft_message_title {
+	background-color: var(--webcraft-color-secondary);
+	color: var(--webcraft-color-white);
+	border-color: var(--webcraft-color-secondary-dark);
+}
+.webcraft_message--success {
+	border-color: var(--webcraft-color-success-dark);
+}
+.webcraft_message--success > .webcraft_message_title {
+	background-color: var(--webcraft-color-success);
+	color: var(--webcraft-color-white);
+	border-color: var(--webcraft-color-success-dark);
+}
+.webcraft_message--warning {
+	border-color: var(--webcraft-color-warning-dark);
+}
+.webcraft_message--warning > .webcraft_message_title {
+	background-color: var(--webcraft-color-warning);
+	color: var(--webcraft-color-white);
+	border-color: var(--webcraft-color-warning-dark);
+}
+.webcraft_message--danger {
+	border-color: var(--webcraft-color-danger-dark);
+}
+.webcraft_message--danger > .webcraft_message_title {
+	background-color: var(--webcraft-color-danger);
+	color: var(--webcraft-color-white);
+	border-color: var(--webcraft-color-danger-dark);
+}
+.webcraft_toolbar.webcraft_message_toolbar {
+	padding: calc(2 * var(--webcraft-space));
+}

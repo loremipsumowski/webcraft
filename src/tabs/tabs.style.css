@@ -1,0 +1,87 @@
+.webcraft_tabs {
+	background-color: var(--webcraft-color-white);
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.webcraft_tabview {
+	flex: 1;
+	position: relative;
+}
+.webcraft_tabs_header {
+	display: flex;
+}
+.webcraft_tabview_header {
+	padding: calc(2 * var(--webcraft-space)) calc(4 * var(--webcraft-space));
+	cursor: pointer;
+}
+
+.webcraft_tabview_header--active {
+	color: var(--webcraft-color-primary);
+}
+.webcraft_tabview_header.webcraft_tabview_header--disabled {
+	cursor: not-allowed;
+	color: var(--webcraft-color-gray-medium);
+}
+.webcraft_tabs--top {
+	flex-direction: column;
+}
+.webcraft_tabs--top > .webcraft_tabs_header {
+	border-bottom: var(--webcraft-border-size) solid var(--webcraft-color-gray-light);
+	box-shadow: 0px calc(2 * var(--webcraft-space)) calc(6 * var(--webcraft-space))  0px var(--webcraft-color-gray-lightest);
+}
+.webcraft_tabs--top > .webcraft_tabs_header > .webcraft_tabview_header--active {
+	border-bottom: calc(2 * var(--webcraft-border-size)) solid var(--webcraft-color-primary);
+}
+.webcraft_tabs--top > .webcraft_tabs_header > :not(.webcraft_tabview_header--active) {
+	margin-bottom: calc(2 * var(--webcraft-border-size));
+}
+.webcraft_tabs--bottom {
+	flex-direction: column-reverse;
+}
+.webcraft_tabs--bottom > .webcraft_tabs_header {
+	border-top: var(--webcraft-border-size) solid var(--webcraft-color-gray-light);
+	box-shadow: 0px calc(-2 * var(--webcraft-space)) calc(6 * var(--webcraft-space))  0px var(--webcraft-color-gray-light);
+}
+.webcraft_tabs--bottom > .webcraft_tabs_header > .webcraft_tabview_header--active {
+	border-top: calc(2 * var(--webcraft-border-size)) solid var(--webcraft-color-primary);
+}
+.webcraft_tabs--bottom > .webcraft_tabs_header > :not(.webcraft_tabview_header--active) {
+	margin-top: calc(2 * var(--webcraft-border-size));
+}
+.webcraft_tabs--left {
+	flex-direction: row;
+}
+.webcraft_tabs--left > .webcraft_tabs_header {
+	flex-direction: column;
+}
+.webcraft_tabs--left > .webcraft_tabs_header {
+	border-right: var(--webcraft-border-size) solid var(--webcraft-color-gray-light);
+	box-shadow: calc(2 * var(--webcraft-space)) 0px calc(6 * var(--webcraft-space))  0px var(--webcraft-color-gray-light);
+}
+.webcraft_tabs--left > .webcraft_tabs_header > .webcraft_tabview_header--active {
+	border-right: calc(2 * var(--webcraft-border-size)) solid var(--webcraft-color-primary);
+}
+.webcraft_tabs--left > .webcraft_tabs_header > :not(.webcraft_tabview_header--active) {
+	margin-right: calc(2 * var(--webcraft-border-size));
+}
+.webcraft_tabs--right {
+	flex-direction: row-reverse;
+}
+.webcraft_tabs--right > .webcraft_tabs_header {
+	flex-direction: column;
+}
+.webcraft_tabs--right > .webcraft_tabs_header {
+	border-left: var(--webcraft-border-size) solid var(--webcraft-color-gray-light);
+	box-shadow: calc(-2 * var(--webcraft-space)) 0px calc(6 * var(--webcraft-space))  0px var(--webcraft-color-gray-light);
+}
+.webcraft_tabs--right > .webcraft_tabs_header > .webcraft_tabview_header--active {
+	border-left: calc(2 * var(--webcraft-border-size)) solid var(--webcraft-color-primary);
+}
+.webcraft_tabs--right > .webcraft_tabs_header > :not(.webcraft_tabview_header--active) {
+	margin-left: calc(2 * var(--webcraft-border-size));
+}
+.webcraft_tabview_header_icon,
+.webcraft_tabview_header_text {
+	pointer-events: none;
+}
