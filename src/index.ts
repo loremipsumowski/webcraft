@@ -20,6 +20,7 @@ import { MultiCombobox } from './editors/combobox/MultiCombobox';
 import { Combobox } from './editors/combobox/Combobox';
 import { Timepicker } from './timepicker/Timepicker';
 import { Toggle } from './editors/toggle/Toggle';
+import { RadioGroup } from './editors/radio-group/RadioGroup';
 
 const tooltip = Tooltip.show;
 const toastInstance = new Toast();
@@ -44,6 +45,7 @@ export {
 	Timepicker,
 	Window,
 	Toggle,
+	RadioGroup,
 	tooltip,
 	toast,
 };

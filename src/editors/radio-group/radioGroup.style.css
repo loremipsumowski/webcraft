@@ -1,0 +1,64 @@
+.webcraft_radiogroup .webcraft_editor_content {
+	display: flex;
+}
+.webcraft_radiogroup--column .webcraft_editor_content {
+	flex-direction: column;
+}
+.webcraft_radiogroup--row .webcraft_editor_content {
+	flex-direction: row;
+}
+.webcraft_radio_item {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	padding: var(--webcraft-space);
+}
+
+.webcraft_radio_item label {
+	margin-left: var(--webcraft-space);
+}
+
+.webcraft_radio {
+	height: calc(var(--webcraft-space) * 4);
+	width: calc(var(--webcraft-space) * 4);
+	cursor: pointer;
+	position: relative;
+	background: #fff;
+	transition: all 0.15s;
+	border-width: var(--webcraft-border-width);
+    border-color: var(--webcraft-border-color);
+    border-radius: 50%;
+    border-style: solid;
+    outline: none;
+	flex-shrink: 0;
+}
+.webcraft_radio > input {
+	width: 0;
+	height: 0;
+}
+.webcraft_radio--checked {
+    border-color: var(--webcraft-color-primary);
+}
+.webcraft_radio--checked::after {
+	content: '';
+    left: calc(var(--webcraft-space) * 0.75);
+    top: calc(var(--webcraft-space) * 0.75);
+    width: calc(var(--webcraft-space) * 2.5);
+    height: calc(var(--webcraft-space) * 2.5);
+	border-radius: 50%;
+    position: absolute;
+	background-color: var(--webcraft-color-primary);
+}
+
+.webcraft_radio--disabled .webcraft_radio {
+	background-color: var(--webcraft-color-gray-light);
+	border-color: var(--webcraft-color-gray-medium);
+	cursor: not-allowed;
+}
+.webcraft_radio--disabled .webcraft_radio--checked::after {
+	background-color: var(--webcraft-color-gray-dark);
+}
+
+.webcraft_radiogroup > .webcraft_control_wrapper {
+	height: fit-content;
+}

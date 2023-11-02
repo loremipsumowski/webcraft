@@ -1,6 +1,6 @@
 import { IdType } from './Types';
 
-let lastGeneratedId = 0;
+let lastGeneratedId = Date.now();
 export function generateId(): IdType {
-	return lastGeneratedId++;
+	return `w_${lastGeneratedId++}`;
 }
