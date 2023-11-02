@@ -1,5 +1,5 @@
 import m from 'mithril';
-import './Progress.style.css';
+import './progress.style.css';
 import { IdType } from '../common/Types';
 import { generateId } from '../common/Tools';
 

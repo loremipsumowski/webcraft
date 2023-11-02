@@ -4,7 +4,7 @@ import { Editor, EditorAttributes, EditorEventTypes } from '../Editor';
 import { IdType } from '../../common/Types';
 import classNames from 'classnames';
 
-import './radiogroup.style.css';
+import './radioGroup.style.css';
 
 declare type RadioItemType = {
 	id: IdType;
