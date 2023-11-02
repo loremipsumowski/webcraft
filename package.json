@@ -1,6 +1,6 @@
 {
-  "name": "webcraft",
-  "version": "1.0.0",
+  "name": "webcraft-ui",
+  "version": "1.0.0-beta",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
