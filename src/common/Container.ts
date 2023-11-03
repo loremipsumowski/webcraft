@@ -92,7 +92,7 @@ export abstract class Container<A extends ContainerAttributes, E extends ValidEv
 			return this.content.view();
 		}
 
-		return this.content;
+		return m.fragment({key: `${this.getId()}-content`}, [this.content]);
 	}
 
 	protected _getView({ className, ...attrs }: m.Attributes): m.Vnode<unknown, unknown> {
