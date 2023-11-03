@@ -35,5 +35,5 @@ module.exports = {
 			'always'
 		]
 	},
-	'ignorePatterns': [ 'dist/*', 'node_modules/*', '.eslintrc.js', 'webpack.*.js'],
+	'ignorePatterns': [ 'dist/*', 'node_modules/*', '.eslintrc.js', 'webpack.*.js', 'typedoc.config.js'],
 };

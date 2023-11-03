@@ -8,6 +8,9 @@ export function hasDecimalLegalChars(value: string): boolean {
 	if (value === '') {
 		return true;
 	}
+	if (value.startsWith('-')) {
+		value = value.substring(1);
+	}
 	const delimitter = getGlobalConfig().number.delimitter;
 
 	if (value.split(delimitter).length > 2) {
@@ -21,6 +24,9 @@ export function hasDecimalLegalChars(value: string): boolean {
 export function hasIntegerLegalChars(value: string): boolean {	
 	if (value === '') {
 		return true;
+	}
+	if (value.startsWith('-')) {
+		value = value.substring(1);
 	}
 	return /^[0-9]+$/.test(value);
 }

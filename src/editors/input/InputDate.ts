@@ -7,6 +7,7 @@ import { formatDate } from '../../tools/Formatters';
 import { Button } from '../..';
 import { Popup } from '../../popup/Popup';
 import { Calendar } from '../../calendar/Calendar';
+import { dateFormats } from '../../tools/DateFormats';
 
 declare type PopupMode = true | false | 'onlyByButton' | 'onlyByFocus';
 
@@ -14,6 +15,7 @@ export declare type InputDateAttributes = EditorAttributes<Date> & {
 	placeholder?: string;
 	readonly?: boolean;
 	popup?: PopupMode;
+	format?: keyof typeof dateFormats;
 }
 
 export class InputDate extends Editor<Date, InputDateAttributes, EditorEventTypes<Date>> {
@@ -75,12 +77,12 @@ export class InputDate extends Editor<Date, InputDateAttributes, EditorEventType
 				readonly: this.attrs.readonly,
 				value: this._editingValue ? this._editingValue : this.getFormattedValue(),
 				onchange: (e: InputEvent) => {
-					this.setValue(convertToDate((e.target as HTMLInputElement).value));
+					this.setValue(convertToDate((e.target as HTMLInputElement).value, this.attrs.format));
 				},
 				oninput: (e: InputEvent) => {
 					const value = (e.target as HTMLInputElement).value;
 					this._editingValue = value;
-					this.validate(convertToDate(value));
+					this.validate(convertToDate(value, this.attrs.format));
 				},
 				onfocusin: (e: FocusEvent) => {
 					this._editingValue = this.getFormattedValue();
@@ -107,7 +109,7 @@ export class InputDate extends Editor<Date, InputDateAttributes, EditorEventType
 	}
 
 	getFormattedValue(): string {
-		return formatDate(this.getValue());
+		return formatDate(this.getValue(), this.attrs.format);
 	}
 
 	private _getPopupMode(): PopupMode {

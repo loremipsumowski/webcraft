@@ -18,11 +18,13 @@ export function convertDelimitters(value: string): string {
 	return value.replace(/[,.]/g, delimitter);
 }
 
-export function convertToDate(value: string): Date | undefined {
+export function convertToDate(value: string, format?: keyof typeof dateFormats): Date | undefined {
 	if (value === '') {
 		return undefined;
 	}
-	const format = getGlobalConfig().date.format;
+	if (!format) {
+		format = getGlobalConfig().date.format;
+	}
 	const dateFormat = dateFormats[format];
 	const year = dateFormat.yearRange ? value.substring(...dateFormat.yearRange) : undefined;
 	const month = dateFormat.monthRange ? value.substring(...dateFormat.monthRange) : undefined;
@@ -34,7 +36,7 @@ export function convertToDate(value: string): Date | undefined {
 		isEmpty(day) ? undefined : Number(day),
 	);
 
-	if (!hasLegalParts || value.length > format.length || dateFormat.separators?.find(ind => value.length > ind && value[ind] !== format[ind])) {
+	if (!hasLegalParts || value.length > format.length || dateFormat.separators?.find(ind => value.length > ind && value[ind] !== format![ind])) {
 		return new Date(NaN);
 	}
 	const date = new Date(2000, 0, 1);

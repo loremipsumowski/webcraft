@@ -1,4 +1,5 @@
 import { convertDelimitters, removeWhiteSpaces } from './Converters';
+import { dateFormats } from './DateFormats';
 import { getGlobalConfig } from './Global';
 
 function formatThousandSeparators(value: number | string): string {
@@ -54,12 +55,14 @@ export function prependZero(maxLength: number, value: string): string {
 	else return value;
 }
 
-export function formatDate(value?: Date): string {
+export function formatDate(value?: Date, format?: keyof typeof dateFormats): string {
 	if (!value || isNaN(value.getTime())) {
 		return '';
 	}
 
-	const format = getGlobalConfig().date.format;
+	if (!format) {
+		format = getGlobalConfig().date.format;
+	}
 	const year = value.getFullYear();
 	const month = value.getMonth() + 1;
 	const day = value.getDate();

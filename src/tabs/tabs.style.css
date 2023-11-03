@@ -92,8 +92,10 @@
 .webcraft_tabview_header_text {
 	pointer-events: none;
 }
-.webcraft_tabview_header:not(.webcraft_tabview_header--active) .webcraft_tabview_btn_close {
+.webcraft_tabview_btn_close {
 	margin-left: var(--webcraft-space);
+}
+.webcraft_tabview_header:not(.webcraft_tabview_header--active) .webcraft_tabview_btn_close {
 	visibility: hidden;
 }
 .webcraft_tabview_header:hover .webcraft_tabview_btn_close {
