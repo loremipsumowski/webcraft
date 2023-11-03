@@ -64,6 +64,14 @@ export class Tabs extends Component<TabsAttributes, TabsEventTypes> {
 		m.redraw();
 	}
 
+	close(tabviewId: IdType): void {
+		const index = this._tabs.findIndex(tab => tab.getId() === tabviewId);
+		if (index > -1) {
+			this._tabs.splice(index, 1);
+		}
+		m.redraw();
+	}
+
 	view(): m.Vnode<unknown, unknown> {
 		return m('div.webcraft_tabs', {
 			className: classNames([

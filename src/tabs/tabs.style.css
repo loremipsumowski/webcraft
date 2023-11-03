@@ -11,9 +11,16 @@
 .webcraft_tabs_header {
 	display: flex;
 }
+.webcraft_tabs--top .webcraft_tabs_header,
+.webcraft_tabs--bottom .webcraft_tabs_header {
+	height: 38px;
+}
 .webcraft_tabview_header {
 	padding: calc(2 * var(--webcraft-space)) calc(4 * var(--webcraft-space));
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .webcraft_tabview_header--active {
@@ -84,4 +91,11 @@
 .webcraft_tabview_header_icon,
 .webcraft_tabview_header_text {
 	pointer-events: none;
+}
+.webcraft_tabview_header:not(.webcraft_tabview_header--active) .webcraft_tabview_btn_close {
+	margin-left: var(--webcraft-space);
+	visibility: hidden;
+}
+.webcraft_tabview_header:hover .webcraft_tabview_btn_close {
+	visibility: visible;
 }
