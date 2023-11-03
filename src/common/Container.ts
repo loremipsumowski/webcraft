@@ -39,10 +39,18 @@ export abstract class Container<A extends ContainerAttributes, E extends ValidEv
 		}
 	}
 
+	/**
+	 * Replaces current content of the container. It could be text or another component
+	 * @param content text to display or component to embed
+	 */
 	attach(content: ContentType) {
 		this.content = content;
 	}
 
+	/**
+	 * Get current content of the container.
+	 * @returns content of the container currently embeded
+	 */
 	getContent(): ContentType | undefined {
 		return this.content;
 	}

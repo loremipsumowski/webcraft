@@ -5,6 +5,6 @@
 	height: fit-content;
 	padding: var(--webcraft-space);
 }
-.webcraft_toolbar_item:not(:last-child) {
+.webcraft_toolbar > .webcraft_button:not(:last-child) {
 	margin-right: var(--webcraft-space);
 }
