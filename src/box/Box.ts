@@ -99,6 +99,11 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		this._computeFlex();
 	}
 
+	/**
+	 * Returns one of the nested cells by its id
+	 * @param id id of the cell to get
+	 * @returns Box container associated with passed id, or undefined if there is no nested box with requested id
+	 */
 	getContainer(id: IdType): Box | undefined {
 		let container = this._boxes.find(x => x.getId() === id);
 		if (container) {
@@ -111,6 +116,9 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		return container;
 	}
 
+	/**
+	 * Returns array of all nested boxes on every level down until there is another box attached as content
+	 */
 	getAllContainers(): Box[] | undefined {
 		const containers: Box[] = [];
 		containers.push(...this._boxes);
@@ -120,6 +128,11 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		return containers;
 	}
 
+	/**
+	 * Add new cell to the box
+	 * @param attributes configuration of the new box, or component instance to add inside new box
+	 * @returns Newly created box
+	 */
 	add(attributes: BoxExtendedContentType | Component<ComponentAttributes, ValidEventTypes>): Box {
 		if (this.getContent() !== undefined) {
 			throw new Error('Cannot add container because box contains component attached!');
@@ -146,40 +159,71 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		}
 	}
 
+	/**
+	 * Get information about children boxes direction
+	 * @returns direction that box cells are organized into
+	 */
 	getDirection(): FlexDirection {
 		return this.attrs.direction ?? 'column';
 	}
 
+	/**
+	 * Change direction of the children boxes
+	 * @param direction direction to organize children into
+	 */
 	setDirection(direction: FlexDirection): void {
 		this.attrs.direction = direction;
 		this._computeFlex();
 		m.redraw();
 	}
 
+	/**
+	 * Makes box visible/invisible on the page as whole (header and content)
+	 * @param value true to hide the box
+	 */
 	setHidden(value: boolean): void {
 		this.attrs.hidden = value;
 		m.redraw();
 	}
 
+	/**
+	 * Get text displays as the box header title
+	 * @returns text of the box header
+	 */
 	getHeader(): string | undefined {
 		return this.attrs.header;
 	}
 
+	/**
+	 * Changes text displays as box header title
+	 * @param header text to display as header title
+	 */
 	setHeader(header: string | undefined): void {
 		this.attrs.header = header;
 		this._computeFlex();
 		m.redraw();
 	}
 
+	/**
+	 * Get style of gaps between each container inside the box
+	 * @returns name of gap style currently used
+	 */
 	getGap(): GapStyle {
 		return this.attrs.gap || this._parent?.getGap() ||  'small';
 	}
 
+	/**
+	 * Changes style of gap spaces between each container inside the box
+	 * @param gap name of gap style to use
+	 */
 	setGap(gap?: GapStyle): void {
 		this.attrs.gap = gap;
 		m.redraw();
 	}
 
+	/**
+	 * Hide box content. Remains only header line to display
+	 */
 	collapse(): void {
 		this.attrs.collapsed = true;
 		(this.header.getItem('toggle') as Button).setIcon(this._getCollapsingIcon());
@@ -187,6 +231,9 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		m.redraw();
 	}
 
+	/**
+	 * Show box content.
+	 */
 	expand(): void {
 		this.attrs.collapsed = false;
 		(this.header.getItem('toggle') as Button).setIcon(this._getCollapsingIcon());
@@ -194,6 +241,9 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		m.redraw();
 	}
 
+	/**
+	 * Hide/show box content.
+	 */
 	toggle(): void {
 		if (this.isCollapsed()) {
 			this.expand();
@@ -202,6 +252,10 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		}
 	}
 
+	/**
+	 * Get information that box content is visible or not
+	 * @returns true when box content is visibled
+	 */
 	isCollapsed(): boolean {
 		return Boolean(this.attrs.collapsed);
 	}
