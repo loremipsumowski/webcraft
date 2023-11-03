@@ -5,6 +5,7 @@
 	width: 100%;
 	height: 100%;
 	max-width: 100%;
+	background-color: var(--webcraft-color-gray-light);
 }
 .webcraft_toolbar.webcraft_box_header {
 	background-color: var(--webcraft-bg-color-gray);
