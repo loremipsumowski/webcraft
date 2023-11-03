@@ -1,6 +1,6 @@
 {
   "name": "webcraft-ui-beta",
-  "version": "1.0.10-beta",
+  "version": "1.0.11-beta",
   "description": "",
   "main": "src/index.ts",
   "types": "dist/types/index.d.ts",
