@@ -13,28 +13,51 @@ import { Tree } from '../tree/Tree';
 import { Container, ContainerAttributes } from '../common/Container';
 import { Control, ControlAttributes, ControlEventTypes } from '../controls/common/Control';
 import { Text } from '../controls/text/Text';
+import { Space } from '../controls/space/Space';
 
 declare type GapStyle = 'none' | 'line' | 'small' | 'large';
 
 export declare type BoxAttributes = {
+	/**
+	 * Name of CSS class or array of classes to apply to the box.
+	 */
 	classnames?: string | string[],
+	/**
+	 * Direction to order content into - "row" to organize them horizontally or "column" to organize them vertically
+	 */
 
 	direction?: FlexDirection;
-
+	/**
+	 * Text to display as header of the box
+	 */	
 	header?: string;
-
+	/**
+	 * Style of gap between content cells
+	 */
 	gap?: GapStyle;
-
+	/**
+	 * Sizes of the box like minimal, maximal and default width and height
+	 */
 	sizes?: SizeType;
-
+	/**
+	 * Specifies wheather there is available button on the header line, that allows user to expand/collapse box's content
+	 */		
 	collapsable?: boolean;
-
+	/**
+	 * Default value of box content visibility
+	 */
 	collapsed?: boolean;
-
+	/**
+	 * CSS flex value of the box
+	 */
 	flex?: number | string;
-
+	/**
+	 * Specifies wheather box is hidden as whole within its header. When true, no part of box could be rendered on the page.
+	 */
 	hidden?: boolean;
-
+	/**
+	 * Specifies wheather box content could wrap into multiple lines or not
+	 */
 	flexWrap?: boolean;
 } & ContainerAttributes;
 
@@ -102,15 +125,21 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 			throw new Error('Cannot add container because box contains component attached!');
 		} else {
 			let boxAttributes;
-			if (attributes instanceof Component) {
-				boxAttributes = {
-					content: attributes
-				};
+			let box;
+			if (attributes instanceof Box) {
+				this._boxes.push(attributes);
+				box = attributes;
 			} else {
-				boxAttributes = attributes;
+				if (attributes instanceof Component) {
+					boxAttributes = {
+						content: attributes
+					};
+				} else {
+					boxAttributes = attributes;
+				}
+				box = new Box(boxAttributes, this);
+				this._boxes.push(box);
 			}
-			const box = new Box(boxAttributes, this);
-			this._boxes.push(box);
 			this._computeFlex();
 			m.redraw();
 			return box;
@@ -144,6 +173,11 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 
 	getGap(): GapStyle {
 		return this.attrs.gap || this._parent?.getGap() ||  'small';
+	}
+
+	setGap(gap?: GapStyle): void {
+		this.attrs.gap = gap;
+		m.redraw();
 	}
 
 	collapse(): void {
@@ -181,11 +215,13 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 			key: this.getId(),
 			className: classNames([
 				'webcraft_box',
-				this.attrs.gap ? `webcraft_box--${this.attrs.gap}` : null,
+				`webcraft_box--${this._parent?.getGap() || this.getGap()}`,
 				this.isCollapsed() ? 'webcraft_box--collapsed' : null,
 				this._boxes.length === 0 ? 'webcraft_box--container' : null,
 				this._getOverflowCss(),
 				this.attrs.classnames,
+				this._getBoxCss(),
+				this.content instanceof Box || this._boxes.length ? null : 'webcraft_box--ui',
 			]),
 			style: {
 				...this._getSizes(),
@@ -203,12 +239,34 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 				className: classNames([
 					'webcraft_box_content',
 					`webcraft_flex--${this.getDirection()}`,
+					this._getContentCss(),
 				]),
 				style: {
 					flexWrap: this.attrs.flexWrap === false ? 'nowrap' : undefined,
 				}
 			}),
 		]);
+	}
+
+	private _getBoxCss(): string[] {
+		const css: string[] = [];
+
+		if (this.header.getItems().length && this._boxes.length) {
+			css.push('webcraft_box--space');
+		}
+
+		return css;
+	}
+
+	private _getContentCss(): string[] {
+		const css: string[] = [];
+
+		if (this.header.getItems().length && this._boxes.length) {
+			css.push('webcraft_box--border-x');
+			css.push('webcraft_box--border-bottom');
+		}
+
+		return css;
 	}
 
 	private _getOverflowCss(): string | undefined {
@@ -262,6 +320,7 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		}
 
 		if (this.attrs.collapsable) {
+			toolbarItems.push(new Space());
 			toolbarItems.push(new Button({
 				id: 'toggle',
 				round: true,
@@ -269,22 +328,23 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 				color: 'secondary',
 				style: 'plain',
 				icon: this._getCollapsingIcon(),
+				events: {
+					click: () => {
+						this.toggle();
+					}
+				}
 			}));
 		}
 		this.header = new Toolbar({
 			classNames: 'webcraft_box_header',
 			items: toolbarItems,
-			justify: 'between'
-		});
-
-		this.header.events.on('click', (id) => {
-			if (id === 'toggle') {
-				this.toggle();
-			}
 		});
 	}
 
 	private _getSizes(): Record<string, string |  number> {
+		if (this.isCollapsed()) {
+			return {};
+		}
 		const style: Record<string, string | number> = {
 			...(this.attrs.sizes || {})
 		};

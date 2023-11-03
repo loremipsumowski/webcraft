@@ -38,7 +38,10 @@ export abstract class Component<A extends ComponentAttributes, E extends ValidEv
 		return this.id;
 	}
 
-	mount(parentNode: HTMLElement = document.body): void {
+	mount(el: HTMLElement | string = document.body): void {
+		if (typeof el === 'string') {
+			el = document.querySelector(el) as HTMLElement;
+		}
 		if (!this.node) {
 			this.node = document.createElement('div');
 			this.node.classList.add('webcraft');
@@ -49,10 +52,10 @@ export abstract class Component<A extends ComponentAttributes, E extends ValidEv
 		m.mount(this.node, {
 			view: () => this.view(),
 			oncreate: () => {
-				parentNode.appendChild(this.node!);
+				(el as HTMLElement).appendChild(this.node!);
 			},
 			onremove: () => {
-				parentNode.removeChild(this.node!);
+				(el as HTMLElement).removeChild(this.node!);
 			},
 		});
 	}

@@ -51,6 +51,7 @@
 	cursor: default;
 	width: 100%;
 	height: 100%;
+	background-color: var(--webcraft-color-gray-light);
 }
 .webcraft--modal {
 	position: absolute;

@@ -6,11 +6,13 @@
 	height: 100%;
 	max-width: 100%;
 }
-.webcraft_box_header {
-	border-bottom: var(--webcraft-border-size) solid var(--webcraft-border-color);
+.webcraft_toolbar.webcraft_box_header {
 	background-color: var(--webcraft-bg-color-gray);
-	height: 2.5em;
+	height: 34px;
 	padding: 0 var(--webcraft-space);
+}
+.webcraft_header_title {
+	font-weight: 600;
 }
 .webcraft_box_content {
 	flex: 1;
@@ -18,59 +20,53 @@
 	overflow: auto;
 	position: relative;
 }
-.webcraft_box_content > div {
-	flex: 1;
-	overflow: hidden;
+.webcraft_box--ui > .webcraft_box_content {
+	background-color: #FFF;
 }
-.webcraft_box--line .webcraft_box {
-	outline: var(--webcraft-border-size) solid var(--webcraft-border-color);
+.webcraft_box--line.webcraft_box--ui {
+	margin: 1px;
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
 }
-.webcraft_box .webcraft_box--container {
-    margin: 1px 1px 0 0;
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);
+.webcraft_box--line.webcraft_box--container,
+.webcraft_box--line.webcraft_box.webcraft_box--space {
+	margin: 1px;
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
 }
-.webcraft_box.webcraft_box--none .webcraft_box--container {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+
+.webcraft_box--small.webcraft_box--ui {
+	margin: 1px;
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
 }
-.webcraft_box--small {
-	padding: calc(1 * var(--webcraft-space));
-	width: calc(100% - calc(2 * var(--webcraft-space)));
-	height: calc(100% - calc(2 * var(--webcraft-space)));
+.webcraft_box--small.webcraft_box--container,
+.webcraft_box--small.webcraft_box.webcraft_box--space {
+	margin: 4px;
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
 }
-.webcraft_box--small .webcraft_box--container {
-	margin: calc(1 * var(--webcraft-space));
-	width: calc(100% - calc(2 * var(--webcraft-space)));
-	height: calc(100% - calc(2 * var(--webcraft-space)));
+
+.webcraft_box--large.webcraft_box--ui {
+	margin: 1px;
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
 }
-.webcraft_box--large {
-	padding: calc(2 * var(--webcraft-space));
-	width: calc(100% - calc(4 * var(--webcraft-space)));
-	height: calc(100% - calc(4 * var(--webcraft-space)));
-}
-.webcraft_box--large .webcraft_box--container {
-	margin: calc(2 * var(--webcraft-space));
-	width: calc(100% - calc(4 * var(--webcraft-space)));
-	height: calc(100% - calc(4 * var(--webcraft-space)));
-}
-.webcraft_box--container > .webcraft_box_content {
-	background-color: #fff;
-	padding: var(--webcraft-space);
-}
-.webcraft_header_title {
-	font-weight: 600;
-}
-.webcraft_box_content.webcraft_flex--row {
-	flex-wrap: wrap;
+.webcraft_box--large.webcraft_box--container,
+.webcraft_box--large.webcraft_box.webcraft_box--space {
+	margin: 8px;
+	width: calc(100% - 18px);
+	height: calc(100% - 18px);
+	border: var(--webcraft-border-size) solid var(--webcraft-border-color);
 }
 .webcraft_flex--row > .webcraft_box--collapsed > .webcraft_box_header {
 	writing-mode: tb-rl;
 	transform: rotate(-180deg);
 	justify-content: flex-end;
+	flex: 1;
 }
-
-.webcraft_flex--row > .webcraft_box--collapsed > .webcraft_box_header >.webcraft_header_title {
-	margin-bottom: calc(2 * var(--webcraft-space));
+.webcraft_flex--row > .webcraft_box--collapsed > .webcraft_box_header > .webcraft_space {
+	display: none;
 }
