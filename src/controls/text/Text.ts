@@ -1,6 +1,5 @@
 import m from 'mithril';
 
-import { ValidEventTypes } from '../../event-emitter/EventEmitter';
 import { getControlEvents } from '../common/Control';
 import { Control, ControlAttributes, ControlEventTypes } from '../common/Control';
 import classNames from 'classnames';
@@ -9,7 +8,7 @@ export declare type TextAttributes = ControlAttributes & {
 	value?: string;
 };
 
-declare type TextEventTypes = ValidEventTypes & ControlEventTypes;
+declare type TextEventTypes = ControlEventTypes;
 
 export class Text extends Control<TextAttributes, TextEventTypes> {
 

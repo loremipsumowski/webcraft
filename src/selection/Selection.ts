@@ -1,13 +1,12 @@
 import { IDataComponent, IdType } from '../common/Types';
 import { DataItemType } from '../data/Types';
-import { ValidEventTypes } from '../event-emitter/EventEmitter';
 
 export declare type SelectionAttributes = {
 	multiple?: boolean;
 	selected?: IdType[];
 }
 
-export declare type SelectionEventTypes = ValidEventTypes & {
+export declare type SelectionEventTypes =  {
 	afterSelect: (ids: IdType[]) => void;
 	afterUnselect: (ids: IdType[]) => void;
 }

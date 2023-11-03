@@ -1,7 +1,6 @@
 import m from 'mithril';
 import classNames from 'classnames';
 
-import { ValidEventTypes } from '../../event-emitter/EventEmitter';
 import { getControlEvents } from '../common/Control';
 import { Control, ControlAttributes, ControlEventTypes } from '../common/Control';
 import { Color } from '../../common/Types';
@@ -22,7 +21,7 @@ export type ButtonAttributes = ControlAttributes & {
 
 };
 
-declare type ButtonEventTypes = ValidEventTypes & ControlEventTypes;
+declare type ButtonEventTypes = ControlEventTypes;
 
 export class Button extends Control<ButtonAttributes, ButtonEventTypes> {
 

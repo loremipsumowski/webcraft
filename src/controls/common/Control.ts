@@ -1,6 +1,5 @@
 import m from 'mithril';
 import { Component, ComponentAttributes } from '../../common/Component';
-import { ValidEventTypes } from '../../event-emitter/EventEmitter';
 import { TooltipAttrs } from '../../messages/Tooltip';
 
 export function getControlEvents(control: Component<ComponentAttributes, ControlEventTypes>) {
@@ -32,11 +31,13 @@ export type ControlAttributes = ComponentAttributes & {
 	hidden?: boolean;
 }
 
-export type ControlEventTypes = ValidEventTypes & {
+export type ControlEventTypes = {
 	click: (e: PointerEvent) => void;
 	dblclick: (e: PointerEvent) => void;
 	mouseover: (e: PointerEvent) => void;
 	mouseout: (e: PointerEvent) => void;
+	mousedown: (e: PointerEvent) => void;
+	mouseup: (e: PointerEvent) => void;
 };
 
 export abstract class Control<A extends ControlAttributes, E extends ControlEventTypes> extends Component<A, E> {

@@ -17,7 +17,7 @@ export declare type MessageAttributes = ComponentAttributes & {
 	buttons?: Button[];
 }
 
-declare type MessageEventsType = ValidEventTypes & {
+declare type MessageEventsType = {
 	afterHide: () => void;
 };
 

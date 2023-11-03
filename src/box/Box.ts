@@ -65,7 +65,7 @@ export declare type BoxExtendedContentType = {
 	content?: Component<ComponentAttributes, ValidEventTypes> | Array<Component<ComponentAttributes, ValidEventTypes> | BoxExtendedContentType> | ContainerAttributes['content'];
 } & Omit<BoxAttributes, 'content'>;
 
-declare type BoxEventTypes = ValidEventTypes & {
+declare type BoxEventTypes = {
 	onCreate: (dom: HTMLElement) => void;
 	onUpdate: (dom: HTMLElement) => void;
 }

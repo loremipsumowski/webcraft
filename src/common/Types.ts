@@ -18,7 +18,7 @@ export declare type FlexDirection = 'row' | 'column';
 export declare type FlexJustification = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
 export declare type FlexAlignment = 'start' | 'center' | 'end' | 'stretch';
 
-export declare type IDataEventTypes = ValidEventTypes & {
+export declare type IDataEventTypes = {
 	afterLoad: () => void;
 }
 

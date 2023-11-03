@@ -1,11 +1,10 @@
 import m from 'mithril';
 import { Container, ContainerAttributes } from '../common/Container';
-import { ValidEventTypes } from '../event-emitter/EventEmitter';
 import { Button, Tabs } from '..';
 import classNames from 'classnames';
 import { Tooltip, TooltipAttrs } from '../messages/Tooltip';
 
-declare type TabViewEventsType = ValidEventTypes & {
+declare type TabViewEventsType = {
 	mouseover: (e: PointerEvent) => void;
 	mouseout: (e: PointerEvent) => void;
 }

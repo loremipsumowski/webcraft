@@ -19,7 +19,7 @@ export declare type WindowAttributes = ContainerAttributes & {
 
 };
 
-declare type WindowEventsType = ValidEventTypes & {
+declare type WindowEventsType = {
 	afterHide: () => void;
 };
 

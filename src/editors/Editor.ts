@@ -1,6 +1,6 @@
 import m from 'mithril';
 import { Component, ComponentAttributes } from '../common/Component';
-import { EventEmitter, ValidEventTypes } from '../event-emitter/EventEmitter';
+import { EventEmitter } from '../event-emitter/EventEmitter';
 
 import './editor.style.css';
 import classNames from 'classnames';
@@ -52,7 +52,8 @@ export declare type EditorAttributes<T> = ComponentAttributes & {
 	icon?: string;
 }
 
-export declare type EditorEventTypes<T> = ValidEventTypes & {
+export declare type EditorEventTypes<T> = {
+	change: (value?: T) => void;
 	mouseover: (e: PointerEvent) => void;
 	mouseout: (e: PointerEvent) => void;
 	afterEnable: () => void;

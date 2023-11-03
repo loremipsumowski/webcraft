@@ -1,6 +1,5 @@
 import m from 'mithril';
 import { Container, ContainerAttributes } from '../common/Container';
-import { ValidEventTypes } from '../event-emitter/EventEmitter';
 
 import './popup.style.css';
 import { IFixedComponent } from '../common/Types';
@@ -13,7 +12,7 @@ export declare type PopupAttrs = ContainerAttributes & {
 	hidden?: boolean;
 };
 
-declare type PopupEventTypes = ValidEventTypes & {
+declare type PopupEventTypes =  {
 	afterShow: () => void;
 	afterHide: () => void;
 };
