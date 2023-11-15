@@ -18,12 +18,16 @@ export type ButtonAttributes = ControlAttributes & {
 	disabled?: boolean;
 	round?: boolean;
 	icon?: string;
+	href?: string;
 
 };
 
 declare type ButtonEventTypes = ControlEventTypes;
 
 export class Button extends Control<ButtonAttributes, ButtonEventTypes> {
+	constructor(attrs?: ButtonAttributes) {
+		super(attrs);
+	}
 
 	getColor(): Color {
 		return this.attrs.color || 'primary';
@@ -74,7 +78,7 @@ export class Button extends Control<ButtonAttributes, ButtonEventTypes> {
 		}
 		const text = this.getText();
 		const icon = this.getIcon();
-		return m('button.webcraft_button', {
+		const vnode = m('button.webcraft_button', {
 			key: this.getId(),
 			type: 'button',
 			disabled: this.isDisabled(),
@@ -92,6 +96,11 @@ export class Button extends Control<ButtonAttributes, ButtonEventTypes> {
 			} }),
 			text && m('span.webcraft_button_text', text ),
 		]);
+
+		if (this.attrs.href) {
+			return m('a', { href: this.attrs.href }, vnode);
+		}
+		return vnode;
 	}
 
 }
