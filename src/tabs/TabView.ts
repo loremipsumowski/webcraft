@@ -1,6 +1,7 @@
 import m from 'mithril';
 import { Container, ContainerAttributes } from '../common/Container';
-import { Button, Tabs } from '..';
+import { Button } from '../controls/button/Button';
+import { Tabs } from '..//tabs/Tabs';
 import classNames from 'classnames';
 import { Tooltip, TooltipAttrs } from '../messages/Tooltip';
 

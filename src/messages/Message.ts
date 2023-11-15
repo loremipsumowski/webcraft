@@ -5,7 +5,7 @@ import { ValidEventTypes } from '../event-emitter/EventEmitter';
 import './message.style.css';
 import { Color } from '../common/Types';
 import classNames from 'classnames';
-import { Toolbar } from '..';
+import { Toolbar } from '../toolbar/Toolbar';
 import { Button } from '../controls/button/Button';
 import { Container, ContainerAttributes } from '../common/Container';
 

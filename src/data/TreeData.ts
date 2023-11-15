@@ -1,4 +1,4 @@
-import { Box } from '..';
+import { Box } from '../box/Box';
 import { generateId } from '../common/Tools';
 import { IData, IDataComponent, IdType } from '../common/Types';
 import { EventEmitter, ValidEventTypes } from '../event-emitter/EventEmitter';

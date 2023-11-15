@@ -4,7 +4,7 @@ import './calendar.style.css';
 import { Component, ComponentAttributes } from '../common/Component';
 import { Toolbar } from '../toolbar/Toolbar';
 import { Space } from '../controls/space/Space';
-import { Button } from '..';
+import { Button } from '../controls/button/Button';
 import { addDaysToDate, addMonthsToDate, addYearsToDate, compareDatesByYearAndMonth, compareDatesIgnoringTime, getFirstDayOfMonth, getFirstDayOfWeek, getWeekNumber } from '../tools/Date';
 import classNames from 'classnames';
 import { getGlobalConfig } from '../tools/Global';

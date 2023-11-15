@@ -8,7 +8,7 @@ import { Toolbar } from '../toolbar/Toolbar';
 import { FlexDirection, IdType, SizeType } from '../common/Types';
 import { ValidEventTypes } from '../event-emitter/EventEmitter';
 import { Button } from '../controls/button/Button';
-import { Datagrid } from '..';
+import { Datagrid } from '../datagrid/Datagrid';
 import { Tree } from '../tree/Tree';
 import { Container, ContainerAttributes } from '../common/Container';
 import { Control, ControlAttributes, ControlEventTypes } from '../controls/common/Control';

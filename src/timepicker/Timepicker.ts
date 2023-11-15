@@ -1,7 +1,9 @@
 import m from 'mithril';
 import { Component, ComponentAttributes } from '../common/Component';
 import { ValidEventTypes } from '../event-emitter/EventEmitter';
-import { Box, InputNumber, Toggle } from '..';
+import { Box } from '../box/Box';
+import { InputNumber } from '../editors/input/InputNumber';
+import { Toggle } from '../editors/toggle/Toggle';
 import { prependZero } from '../tools/Formatters';
 import { getGlobalConfig } from '../tools/Global';
 

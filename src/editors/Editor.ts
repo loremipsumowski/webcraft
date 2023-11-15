@@ -6,7 +6,7 @@ import './editor.style.css';
 import classNames from 'classnames';
 import { SizeType } from '../common/Types';
 import { Tooltip, TooltipAttrs } from '../messages/Tooltip';
-import { Button } from '..';
+import { Button } from '../controls/button/Button';
 import { getGlobalConfig } from '../tools/Global';
 
 declare type LabelAttributes = {

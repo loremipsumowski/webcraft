@@ -3,7 +3,8 @@ import { ValidEventTypes } from '../event-emitter/EventEmitter';
 import { Container, ContainerAttributes } from '../common/Container';
 
 import './window.style.css';
-import { Button, Toolbar } from '..';
+import { Button } from '../controls/button/Button';
+import { Toolbar } from '../toolbar/Toolbar';
 import classNames from 'classnames';
 import { SizeType } from '../common/Types';
 import { Space } from '../controls/space/Space';
