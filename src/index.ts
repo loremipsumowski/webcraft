@@ -25,7 +25,7 @@ import { Space } from './controls/space/Space';
 
 const tooltip = Tooltip.show;
 const toastInstance = new Toast();
-const toast = (config: ToastMessageAttributes) => toastInstance.show(config);
+// const toast = (config: ToastMessageAttributes) => toastInstance.show(config);
 
 export { 
 	Combobox,
@@ -49,5 +49,5 @@ export {
 	RadioGroup,
 	Space,
 	tooltip,
-	toast,
+	// toast,
 };
