@@ -1,7 +1,6 @@
 import m from 'mithril';
 import './form.style.css';
-import { Box } from '..';
-import { BoxExtendedContentType } from '../box/Box';
+import { Box, BoxExtendedContentType } from '../box/Box';
 import { IdType } from '../common/Types';
 import { Editor, EditorAttributes, EditorEventTypes } from '../editors/Editor';
 import { Vnode } from 'mithril';
