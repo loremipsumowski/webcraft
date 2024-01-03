@@ -98,7 +98,7 @@ export class Button extends Control<ButtonAttributes, ButtonEventTypes> {
 		]);
 
 		if (this.attrs.href) {
-			return m('a', { href: this.attrs.href }, vnode);
+			return m('a', { key: `${this.getId()}-href`, href: this.attrs.href }, vnode);
 		}
 		return vnode;
 	}

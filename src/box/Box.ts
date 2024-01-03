@@ -402,7 +402,7 @@ export class Box extends Container<BoxAttributes, BoxEventTypes> {
 		const style: Record<string, string | number> = {
 			...(this.attrs.sizes || {})
 		};
-		['width', 'height', 'minWidth', 'maxWidth', 'minHeight', 'maxHeight'].forEach(type => {
+		['width', 'height', 'minWidth', 'maxWidth', 'minHeight', 'maxHeight', 'padding', 'margin'].forEach(type => {
 			if (typeof style[type] === 'number') {
 				style[type] += 'px';
 			}

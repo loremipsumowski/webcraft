@@ -79,6 +79,10 @@
 	pointer-events: auto;
 }
 
+.webcraft a {
+	text-decoration: none;
+}
+
 .webcraft_container {
 	display: flex;
 	position: relative;

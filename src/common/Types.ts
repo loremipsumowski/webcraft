@@ -8,6 +8,8 @@ export type SizeType = {
 	maxWidth?: number | `${number}px` | `${number}%`;
 	minHeight?: number | `${number}px` | `${number}%`;
 	maxHeight?: number | `${number}px` | `${number}%`;
+	padding?: number | `${number}px` | `${number}%`;
+	margin?: number | `${number}px` | `${number}%`;
 };
 
 export type IdType = string | number;
