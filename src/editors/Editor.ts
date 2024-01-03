@@ -150,13 +150,13 @@ export abstract class Editor<T, A extends EditorAttributes<T>, E extends EditorE
 	/**
 	 * Sets current value of the control, then validates control
 	 * @param value new value to set
-	 * @param suppressEvents when true, then change event does not emit
+	 * @param suppressEvents when true, then afterChange event does not emit
 	 */
 	setValue(value?: T, suppressEvents?: boolean) {
 		this._setEditingValue(undefined);
 		this.attrs.value = value;
 		if (suppressEvents !== true) {
-			(this.events as EventEmitter<EditorEventTypes<T>>).emit('change', this.attrs.value);
+			(this.events as EventEmitter<EditorEventTypes<T>>).emit('afterChange', this.attrs.value);
 		}
 		this.validate();
 		m.redraw();

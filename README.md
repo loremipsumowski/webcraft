@@ -8,7 +8,6 @@ Welcome to the Performance-Optimized UI Components Library – a collection of w
 
 - High-performance UI web components.
 - Efficient rendering using Virtual DOM.
-- [Add other features of your library]
 
 ## Installation
 
@@ -48,3 +47,6 @@ currency.mount();
 
 List of samples is there:
 https://stackblitz.com/@PrzemekNiedziela/collections/webcraft
+
+## License
+This project is licensed under the MIT. See the LICENSE file for additional information.
